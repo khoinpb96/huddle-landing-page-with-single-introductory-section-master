@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+$violet: hsl(257, 40%, 49%);
+$soft-magenta: hsl(300, 69%, 71%);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+body {
+  background: $violet no-repeat bottom
+    url(/frontendmentorChallenges/Newbie/huddle-landing-page-with-single-introductory-section-master/img/bg-desktop.svg);
+  background-size: contain;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+.container {
+  padding: 2rem;
+  .logo {
+    &__pic {
+      height: 2.5rem;
+    }
+  }
+  .row,
+  .social__list {
+    display: flex;
+  }
+  .col {
+    width: 50%;
+    padding: 1rem;
+  }
+  .hero {
+    &__title {
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    &__desc {
+      font-family: "Open Sans", sans-serif;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    &__btn {
+      color: $violet;
+      border: none;
+      width: 8rem;
+      line-height: 2rem;
+      border-radius: 24px;
+      box-shadow: 1px 2px 10px #555;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: 0.1s;
+      &:active {
+        background: $soft-magenta;
+        color: white;
+      }
+    }
+  }
+}
+
+.social {
+  justify-content: flex-end;
+  align-content: flex-end;
+  &__item {
+    min-width: 1.6rem;
+    color: white;
+    line-height: 1.4rem;
+    text-align: center;
+    border: 1.5px solid white;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: 0.05s;
+    &:active {
+      border: 1.5px solid $soft-magenta;
+
+      color: $soft-magenta;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    background-image: url(/frontendmentorChallenges/Newbie/huddle-landing-page-with-single-introductory-section-master/img/bg-mobile.svg);
+    background-position: top;
+  }
+  .container {
+    .row {
+      flex-direction: column;
+      align-items: center;
+      img {
+        margin-bottom: 2rem;
+      }
+    }
+    .col {
+      width: 100%;
+    }
+    .logo {
+      margin-bottom: 3rem;
+    }
+    .hero {
+      margin-bottom: 4rem;
+      p,
+      h2 {
+        text-align: center;
+      }
+      &__title {
+        font-size: 1.5rem;
+      }
+      &__desc {
+        font-size: 0.8rem;
+      }
+      &__btn {
+        margin: auto;
+        display: block;
+        width: 10rem;
+      }
+    }
+  }
+}
